@@ -1,5 +1,6 @@
 package com.thoughtworks.capability.gtb.restfulapidesign.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.thoughtworks.capability.gtb.restfulapidesign.entity.Gender;
 import com.thoughtworks.capability.gtb.restfulapidesign.entity.Student;
 import com.thoughtworks.capability.gtb.restfulapidesign.entity.Team;
@@ -15,5 +16,9 @@ public class TeamService {
 
     public List<Team> getTeamList() {
         return teamRepository.findAll();
+    }
+
+    public List<Team> getTeamListRandomization() throws JsonProcessingException {
+        return teamRepository.getTeamList();
     }
 }

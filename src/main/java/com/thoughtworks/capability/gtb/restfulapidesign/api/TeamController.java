@@ -1,5 +1,6 @@
 package com.thoughtworks.capability.gtb.restfulapidesign.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.thoughtworks.capability.gtb.restfulapidesign.entity.Team;
 import com.thoughtworks.capability.gtb.restfulapidesign.service.TeamService;
 import org.springframework.web.bind.annotation.*;
@@ -22,5 +23,9 @@ public class TeamController {
         return teamService.getTeamList();
     }
 
+    @PutMapping("")
+    public List<Team> getTeamListRandomization() throws JsonProcessingException {
+        return teamService.getTeamListRandomization();
+    }
 
 }
