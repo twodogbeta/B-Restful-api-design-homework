@@ -1,6 +1,7 @@
 package com.thoughtworks.capability.gtb.restfulapidesign.api;
 
 import com.thoughtworks.capability.gtb.restfulapidesign.entity.Gender;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.thoughtworks.capability.gtb.restfulapidesign.entity.Student;
 import com.thoughtworks.capability.gtb.restfulapidesign.service.StudentService;
@@ -20,6 +21,7 @@ public class StudentController {
     }
 
     @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
     public Student addOneStudent(@RequestBody StudentVo studentVo) {
         return studentService.addOneStudent(studentVo);
     }
