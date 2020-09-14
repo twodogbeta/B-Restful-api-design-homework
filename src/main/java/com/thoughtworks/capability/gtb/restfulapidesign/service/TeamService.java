@@ -6,6 +6,8 @@ import com.thoughtworks.capability.gtb.restfulapidesign.entity.Student;
 import com.thoughtworks.capability.gtb.restfulapidesign.entity.Team;
 import com.thoughtworks.capability.gtb.restfulapidesign.repository.StudentRepository;
 import com.thoughtworks.capability.gtb.restfulapidesign.repository.TeamRepository;
+import com.thoughtworks.capability.gtb.restfulapidesign.vo.StudentVo;
+import com.thoughtworks.capability.gtb.restfulapidesign.vo.TeamVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,5 +22,9 @@ public class TeamService {
 
     public List<Team> getTeamListRandomization() throws JsonProcessingException {
         return teamRepository.getTeamList();
+    }
+
+    public Team updateTeamName(String id, String teamName) {
+        return teamRepository.updateTeamName(id,teamName);
     }
 }

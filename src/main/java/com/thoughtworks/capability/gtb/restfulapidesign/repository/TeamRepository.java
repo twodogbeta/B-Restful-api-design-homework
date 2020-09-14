@@ -60,4 +60,14 @@ public class TeamRepository {
         teamList = TeamList;
         return TeamList;
     }
+
+    public Team updateTeamName(String id, String teamName) {
+        for (Team team : teamList) {
+            if (team.getId().equals(id)) {
+                team.setName(teamName);
+                return team;
+            }
+        }
+        throw new IllegalArgumentException("此组id不存在,无法更新");
+    }
 }

@@ -40,6 +40,7 @@ public class StudentController {
     public Student getOneStudent(@PathVariable String id) {
         return studentService.getOneStudent(id);
     }
+
     @PutMapping("/{id}")
     public Student updateOneStudent(@PathVariable String id, @RequestBody StudentVo studentVo) {
         return studentService.updateOneStudent(id, studentVo);
