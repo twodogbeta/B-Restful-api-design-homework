@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class StudentService {
     private final StudentRepository studentRepository = new StudentRepository();
-    private final AtomicInteger autoIncreaseId = new AtomicInteger(0);
+    private final AtomicInteger autoIncreaseId = new AtomicInteger(StudentRepository.studentList.size());
 
     public Student addOneStudent(StudentVo studentVo) {
         Student student = convertStudentVo2Student(studentVo, autoIncreaseId.getAndAdd(1));
