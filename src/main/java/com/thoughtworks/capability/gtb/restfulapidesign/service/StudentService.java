@@ -25,4 +25,8 @@ public class StudentService {
                 .note(studentVo.getNote())
                 .build();
     }
+
+    public void deleteOneStudent(String id) {
+        studentRepository.deleteById(id);
+    }
 }
