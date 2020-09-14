@@ -36,4 +36,8 @@ public class StudentService {
         if (gender == null) return studentRepository.findAll();
         else return studentRepository.findByGender(gender);
     }
+
+    public Student getOneStudent(String id) {
+        return studentRepository.findById(id);
+    }
 }

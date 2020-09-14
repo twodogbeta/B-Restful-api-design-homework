@@ -33,4 +33,15 @@ public class StudentRepository {
     public List<Student> findByGender(Gender gender) {
         return studentList.stream().filter(student -> student.getGender().equals(gender)).collect(Collectors.toList());
     }
+
+
+    public Student findById(String id) {
+        for (Student student : studentList) {
+            if (student.getId().equals(id)) {
+                return student;
+            }
+        }
+        throw new IllegalArgumentException("此学生id不存在");
+    }
+
 }
