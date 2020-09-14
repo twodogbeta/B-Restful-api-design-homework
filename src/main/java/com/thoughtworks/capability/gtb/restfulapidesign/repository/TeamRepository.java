@@ -57,6 +57,14 @@ public class TeamRepository {
         for (int i = 0; i < shuffledStudent.size(); i++) {
             TeamList.get(i % teamCount).getStudentList().add(shuffledStudent.get(i));
         }
+        for (int i = 0; i < teamCount; i++) {
+            String teamName = new String("Team " + (i+1));
+            String teamNote = "default";
+            TeamList.get(i).setId(String.valueOf(i+1));
+            TeamList.get(i).setName(teamName);
+            TeamList.get(i).setNote(teamNote);
+
+        }
         teamList = TeamList;
         return TeamList;
     }
