@@ -44,4 +44,17 @@ public class StudentRepository {
         throw new IllegalArgumentException("此学生id不存在");
     }
 
+    public Student update(String id, Student newStudent) {
+        for (Student student : studentList) {
+            if (student.getId().equals(id)) {
+                student.setGender(newStudent.getGender());
+                student.setName(newStudent.getName());
+                student.setNote(newStudent.getNote());
+                return student;
+            }
+        }
+        throw new IllegalArgumentException("此学生id不存在,无法更新");
+    }
+
+
 }
